@@ -1,0 +1,22 @@
+Obtener la MAC del interface ens3 usando el comando ip address show
+Mostrar la hora actual, solamente la hora
+Cambiar las minúsculas a mayúsculas de la palabra Hola
+Mostrar el contenido de /etc/passwd sustituyendo los dos puntos “:” por espacios “ ” 
+Líneas que contiene la cadena de caracteres admin en el fichero /etc/passwd
+Muestra los campos 1, 3 y 7 del fichero /etc/passwd
+Muestra los campos del 3 al 5 del fichero /etc/passwd
+Muestra a partir del tercer campo del fichero /etc/passwd
+Muestra el nombre de usuario, el UID y el shell del usuario operador
+Número de líneas y de palabras del fichero /etc/passwd
+Número de usuarios del sistema que utilizan /bin/bash como shell
+Muestra el fichero /etc/passwd en orden inverso con el comando sort
+Pasar las vocales a mayúsculas de la palabra murcielago
+Mostrar el contenido de la carpeta actual en formato largo
+Buscar todas las palabras que comiencen por a en el archivo /etc/passwd
+Mostrar por pantalla, las líneas que contienen comentarios en el archivo /boot/grub/grub.cfg
+Enviar a un fichero las líneas del archivo  /boot/grub/grub.cfg que no son comentarios:
+Mostrar las líneas de un fichero que contienen la palabra BADAJOZ o HUELVA, numerando las líneas de salida
+Mostrar los ficheros que contienen la palabra TOLEDO en el directorio actual y todos sus subdirectorios
+Buscar los 10 municipios más poblados
+
+

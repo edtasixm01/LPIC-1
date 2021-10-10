@@ -1,0 +1,15 @@
+Muestra un salto de línea
+Muestra una tabulación
+Muestra las líneas del fichero /etc/network/interfaces numerándolas
+Muestra las líneas del fichero /etc/network/interfaces numerándo sólo las líneas con contenido
+Muestra las primeras 7 líneas del fichero /etc/passwd
+Muestra las últimas 7 líneas del fichero /etc/passwd
+Muestra las primeras 3 líneas de todos los ficheros .log del directorio /var/log
+Busca dentro de los ficheros del directorio /var/log el patrón root
+Ordenar, en orden inverso, las líneas del fichero /etc/passwd
+Ordena el fichero /etc/passwd utilizando el campo UID como criterio de ordenación
+Calcula el número total de titulos que hay en todos los ficheros del directorio /usr/share/data/peliculas/, descartando títulos repetidos
+Indica el número de veces que aparece la palabra "molino" en el fichero "el_quijote.txt"
+Dividir el fichero ripe.db en ficheros de 10M
+Buscar la ubicación del comando fdisk dentro de todo el sistema
+Identificar la versión del kernel que estamos usando

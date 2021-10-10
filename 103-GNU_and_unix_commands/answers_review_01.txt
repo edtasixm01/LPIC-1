@@ -1,0 +1,47 @@
+Obtener la MAC del interface ens3 usando el comando ip address show
+  - ip address show | grep -A 1 ens3 | grep ether | cut -d" " -f6
+Mostrar la hora actual, solamente la hora
+  - date | cut -d" " -f4 | cut -d":" -f1,2
+  - date +%H:%M
+Cambiar las minúsculas a mayúsculas de la palabra Hola
+  - echo Hola | tr 'ola' 'OLA'
+Mostrar el contenido de /etc/passwd sustituyendo los dos puntos “:” por espacios “ ”
+  - cat /etc/passwd | tr ':' ' '
+  - sed -e 's/:/ /g' /etc/passwd
+Líneas que contiene la cadena de caracteres admin en el fichero /etc/passwd
+  - grep admin /etc/passwd
+Muestra los campos 1, 3 y 7 del fichero /etc/passwd
+  - cut -d":" -f1,3,7 /etc/passwd
+Muestra los campos del 3 al 5 del fichero /etc/passwd
+  - cut -d":" -f3-5 /etc/passwd
+  - cut -d":" -f3,4,5 /etc/passwd
+Muestra a partir del tercer campo del fichero /etc/passwd
+  - cut -d":" -f3- /etc/passwd
+Muestra el nombre de usuario, el UID y el shell del usuario pue
+  - grep pue /etc/passwd | cut -d ":" -f1,3,7 
+Número de líneas y de palabras del fichero /etc/passwd
+  - wc -l -w /etc/passwd
+Número de usuarios del sistema que utilizan /bin/bash como shell
+  - grep -c bash$ /etc/passwd
+  - grep bash$ /etc/passwd | wc -l
+  - grep -c '/bin/bash' /etc/passwd
+Muestra el fichero /etc/passwd en orden inverso con el comando sort
+  - sort -r /etc/passwd
+Pasar las vocales a mayúsculas de la palabra murcielago
+  - echo "murcielago" | tr 'aeiou' 'AEIOU'
+Mostrar el contenido de la carpeta actual en formato largo
+  - ls -l 
+Buscar todas las palabras que comiencen por a en el archivo /etc/passwd
+  - grep -o '\ba\w*' /etc/passwd
+Mostrar por pantalla las líneas que contienen comentarios en el archivo /boot/grub/grub.cfg
+  - grep '^#' /boot/grub/grub.cfg
+Enviar a un fichero las líneas del archivo /boot/grub/grub.cfg que no son comentarios
+  - grep -v '^#' /boot/grub/grub.cfg
+Mostrar las líneas de un fichero que contienen la palabra BADAJOZ o HUELVA, numerando las líneas de salida
+  - cat -n provincias | grep -E 'BADAJOZ|HUELVA'
+  - grep -n -E 'BADAJOZ|HUELVA' provincias
+Mostrar los ficheros que contienen la palabra TOLEDO en el directorio actual y todos sus subdirectorios
+  - grep -r -i -w TOLEDO ./ | cut -d":" -f1 | sort | uniq 
+Buscar los 10 municipios con mayor superficie
+  - expand -t 1 municipios | sort -t " " -k 3 -n -r | head -10
+

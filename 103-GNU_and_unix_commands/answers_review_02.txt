@@ -1,0 +1,30 @@
+Muestra un salto de línea
+  - echo -e "Mensaje en \n 2 líneas"
+Muestra una tabulación
+  - echo -e "Mensaje \t tabulado"
+Muestra las líneas del fichero /etc/network/interfaces numerándolas
+  - cat -n /etc/network/interfaces
+Muestra las líneas del fichero /etc/network/interfaces numerándo sólo las líneas con contenido
+  - cat -b /etc/network/interfaces
+Muestra las primeras 7 líneas del fichero /etc/passwd
+  - head -7 /etc/passwd
+Muestra las últimas 7 líneas del fichero /etc/passwd
+  - tail -7 /etc/passwd
+Muestra las primeras 3 líneas de todos los ficheros .log del directorio /var/log
+  - head -3 /var/log/*.log
+Busca dentro de los ficheros del directorio /var/log el patrón root
+  - grep -r -w root /var/log/
+Ordenar, en orden inverso, las líneas del fichero /etc/passwd
+  - sort -r /etc/passwd
+Ordena el fichero /etc/passwd utilizando el campo UID como criterio de ordenación
+  - sort -n -t ":" -k 3 /etc/passwd 
+Calcula el número total de titulos que hay en todos los ficheros del directorio /usr/share/data/peliculas/, descartando títulos repetidos
+  - cat /usr/share/data/peliculas/* | sort | uniq | wc -l
+Indica el número de veces que aparece la palabra "molino" en el fichero "el_quijote.txt"
+  - grep -o -w molino el_quijote.txt | wc -w
+Dividir el fichero ripe.db en ficheros de 10M
+  - split -b 10M ripe.db ripe_
+Buscar la ubicación del comando fdisk dentro de todo el sistema
+  - whereis fdisk
+Identificar la versión del kernel que estamos usando
+  - uname -r
