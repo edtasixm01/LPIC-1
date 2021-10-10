@@ -1,0 +1,61 @@
+NIVEL 0
+=======
+Esc + Esc + Esc + : + q + !
+
+NAVEGACION
+==========
+[N]h,j,k,l -- Movimientos de cursor izda,abajo,arriba,dcha N posiciones
+gg         -- primera línea
+G      	   -- última línea
+[N]G       -- ir a la línea N
+:[N] 	   -- ir a la línea N
+:+/-[N]	   -- saltar N líneas hacia delante/detrás
+$	   -- final de línea
+^	   -- inicio de línea
+e	   -- saltar de final de palabra a final de palabra
+E	   -- saltar de final de palabra (entre espacios)
+[N]w	   -- saltar de palabra en palabra
+W	   -- saltar de espacio en espacio
+b	   -- retroceder palabra a palabra
+B	   -- retroceder palabra a palabra (entre espacios)
+
+INSERCION
+=========
+i	  -- iniciamos escritura en la posición del cursor
+a	  -- iniciamos escritura a continuación del cursor
+I	  -- iniciamos escritura al inicio de línea
+A	  -- iniciamos escritura al final de línea
+o	  -- iniciamos escritura en nueva línea a continuación de la actual
+O	  -- iniciamos escritura en nueva línea previa a la actual
+
+
+EJECUCIÓN
+=========
+x	-- eliminar carácter bajo el cursor (sin dejar el modo de navegación)
+u	-- deshacer la última operación
+r	-- reemplaza el carácter bajo el cursor (sin dejar el modo de navegación)
+d[N]d	-- cortar líneas
+y[N]y	-- copiar líneas
+d[N]w   -- cortar N palabras
+d[N]W   -- cortar N palabras (entre espacios)
+y[N]w   -- copiar N palabras
+y[N]W   -- copiar N palabras (entre espacios)
+d[N]h,j,k,l   -- cortar N posiciones o líneas 
+w[N]h,j,k,l   -- copiar N posiciones o líneas
+
+p	-- pegar palabras/líneas después de la actual 
+P	-- pegar palabras/líneas antes de la actual
+
+J	-- eliminar saltos de línea 
+
+/	-- búsqueda hacia delante 
+?	-- búsqueda hacia atrás
+n/N 	-- next o prev match en el sentido de búsqueda
+
+:	   -- solicitar una ejecución
+:w	   -- guardar
+:q	   -- salir
+:w [PATH]  -- guardar como
+:!	   -- shell escape (ejecuta un comando en shell y vuelve)
+:r!	   -- ejecuta un comando y redirige la stdout al fichero
+(ZZ = :wq)
