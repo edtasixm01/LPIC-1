@@ -37,9 +37,9 @@
  * [Cheat Sheets](https://cheatography.com/)
 
 
-### Get GNU/Linux
+## Get GNU/Linux
 
-#### Get Fedora
+### Get Fedora
 
  * [Get fedora](https://getfedora.org/)
  * [All Fedora GNU/Linux Releases](https://dl.fedoraproject.org/pub/fedora/linux/releases/)
@@ -48,4 +48,9 @@
 
 ### Get Debian
 
- * 
+ * [Get Debian](https://www.debian.org/distrib/)
+ * [Debian Cloud Images](https://cloud.debian.org/images/cloud/)
+ * [Debian Cloud images 10-Bullseye list](https://cloud.debian.org/images/cloud/bullseye/latest/)
+ * [Recomended cloud image / direct root access](https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-nocloud-amd64.qcow2)
+
+
