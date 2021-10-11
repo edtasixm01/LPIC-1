@@ -1,0 +1,1 @@
+wget https://ftp.ripe.net/ripe/dbase/ripe.db.gz
