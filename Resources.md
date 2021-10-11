@@ -37,4 +37,15 @@
  * [Cheat Sheets](https://cheatography.com/)
 
 
+### Get GNU/Linux
 
+#### Get Fedora
+
+ * [Get fedora](https://getfedora.org/)
+ * [All Fedora GNU/Linux Releases](https://dl.fedoraproject.org/pub/fedora/linux/releases/)
+ * [Fedora Cloud](https://dl.fedoraproject.org/pub/fedora/linux/releases/32/Cloud/x86_64/images/)
+
+
+### Get Debian
+
+ * 
