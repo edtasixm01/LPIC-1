@@ -1,6 +1,9 @@
 # LPIC-1
 
 
+[Resources](https://github.com/edtasixm01/LPIC-1/blob/main/Resources.md)
+
+
 ### Topic 103: GNU and Unix Commands
 
  * 103.1 (4) Work on the command line
