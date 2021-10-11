@@ -1,6 +1,6 @@
 # LPIC-1
 
-## LPI Documentation 
+## Resources 
 
 
 ### Linux Professional Institute
@@ -13,6 +13,7 @@
   * [LPIC1 Exam 102]( https://www.lpi.org/our-certifications/exam-102-objectives)
 
   * IBM Developerworks LPI Documentation. [Learn Linux, 101: A roadmap for LPIC-1](https://developer.ibm.com/tutorials/l-lpic1-map/)
+
 
 
 ### VM Virtual Machines
@@ -28,9 +29,11 @@
  * [PUE LAB https://labs.pue.es](https://labs.pue.es)
 
 
+
 ### Resources
 
-Retos del CLI https://cmdchallenge.com/ 
-Regular expressions https://regex101.com/ 
-Cheat Sheets https://cheatography.com/ 
+ * [Retos del CLI](https://cmdchallenge.com)
+ * [Regular expressions](https://regex101.com/)
+ * [Cheat Sheets](https://cheatography.com/)
+
 
