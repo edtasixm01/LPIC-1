@@ -74,7 +74,7 @@ $ sudo docker run --rm --name myfedora -h myfedora -it fedora /bin/bash
 
 $ sudo docker run --rm --name mydebian -h mydebian -it debian /bin/bash
 
-$ sudo docker run --rm --name myubunty -h myubuntu -it ubuntu /bin/bash
+$ sudo docker run --rm --name myubuntu -h myubuntu -it ubuntu /bin/bash
 
 $ sudo docker run --rm --name mycentos -h mycentos -it centos /bin/bash
 ```
