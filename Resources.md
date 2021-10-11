@@ -2,7 +2,9 @@
 
 ## LPI Documentation 
 
+
 ### Linux Professional Institute
+
 
 [Linux Professional Institute](https://www.lpi.org)
 
@@ -11,6 +13,7 @@
   * [LPIC1 Exam 102]( https://www.lpi.org/our-certifications/exam-102-objectives)
 
   * IBM Developerworks LPI Documentation. [Learn Linux, 101: A roadmap for LPIC-1](https://developer.ibm.com/tutorials/l-lpic1-map/)
+
 
 ### VM Virtual Machines
 
