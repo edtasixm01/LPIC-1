@@ -54,3 +54,13 @@
  * [Recomended cloud image / direct root access](https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-nocloud-amd64.qcow2)
 
 
+### Get Ubuntu
+
+ * [Get Ubuntu](https://ubuntu.com/download)
+
+
+### Get CentOS
+
+ * [Get CentOS](https://www.centos.org/download/)
+
+
