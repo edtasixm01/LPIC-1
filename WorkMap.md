@@ -5,14 +5,14 @@
 
 **PUE Labs**
 
- * Accés a les VM Maquines Virtuals del PUE. Per a aquest curs disposem de una VM CentOS 8 i 
-   una VM Debian 10 Buster. [PUE Labs](https://labs.pue.es)
+ * [PUE Labs](https://labs.pue.es). Accés a les VM Maquines Virtuals del PUE. Per a aquest curs 
+   disposem de una VM CentOS 8 i una VM Debian 10 Buster.
 
 
-**github edtasixm01**
+**Github edtasixm01**
 
- * Repositori GIT amb tots els continguts del curs. Serà el centre de documentació principal.
-   Inclou apunts, enllaços i exercicis. [Github edtasixm01](https://github.com/edtasixm01/LPIC-1)
+ * [Github edtasixm01](https://github.com/edtasixm01/LPIC-1). Repositori GIT amb tots els continguts
+   del curs. Serà el centre de documentació principal. Inclou apunts, enllaços i exercicis.
 
 
 **Moodle**
