@@ -1,0 +1,25 @@
+rei	2a45c	V Stago Trinquete	79	210
+aci	4100y	Extractor	2750	25
+qsa	xk47 	Reductor	355	38
+bic	41672	Plate	180	0
+imm	779c 	Riostra 2-Tm	1875	9
+aci	41003	Articulo Tipo 3	107	207
+aci	41004	Articulo Tipo 4	117	139
+bic	41003	Manivela	652	3
+imm	887p 	Perno Riostra	250	24
+qsa	xk48 	Reductor	134	203
+rei	2a44l	Bisagra Izqda.	4500	12
+fea	112  	Cubierta	148	115
+imm	887h 	Soporte Riostra	54	223
+bic	41089	Retn	225	78
+aci	41001	Articulo Tipo 1	55	277
+imm	775c 	Riostra 1-Tm	1425	5
+aci	4100z	Montador	2500	28
+qsa	xk48a	Reductor	117	37
+aci	41002	Articulo Tipo 2	76	167
+rei	2a44r	Bisagra Dcha.	4500	12
+imm	773c 	Riostra 1/2-Tm	975	28
+aci	4100x	Ajustador	25	37
+fea	114  	Bancada Motor	243	15
+imm	887x 	Retenedor Riostra	475	32
+rei	2a44g	Pasador Bisagra	350	14
