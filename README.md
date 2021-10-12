@@ -1,8 +1,12 @@
 # LPIC-1
 
+
 [PUE LAB](https://labs.pue.es)
+
 [Work Map](https://github.com/edtasixm01/LPIC-1/blob/main/WorkMap.md)
+
 [Resources](https://github.com/edtasixm01/LPIC-1/blob/main/Resources.md)
+
 
 
 ### Topic 103: GNU and Unix Commands
