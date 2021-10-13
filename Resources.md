@@ -15,7 +15,6 @@
   * [IBM Developerworks LPI Documentation. Learn Linux, 101: A roadmap for LPIC-1](https://developer.ibm.com/tutorials/l-lpic1-map/)
 
 
-
 ### VM Virtual Machines
 
  * [PUE i386 Centos + Debian. Dual boot CentOS 7 and Debian 10 i386 32 bits 5.1GiB centian_i386.ova](https://u.pcloud.link/publink/show?code=XZcRI2kZmrD0lK2zjE7A3sY5xbdEVJKYWIty)
@@ -29,7 +28,6 @@
  * [PUE LAB https://labs.pue.es](https://labs.pue.es)
 
 
-
 ### Resources
 
  * [Retos del CLI](https://cmdchallenge.com)
@@ -38,6 +36,7 @@
 
 
 ## Get GNU/Linux
+
 
 ### Get Fedora
 
@@ -78,5 +77,29 @@ $ sudo docker run --rm --name myubuntu -h myubuntu -it ubuntu /bin/bash
 
 $ sudo docker run --rm --name mycentos -h mycentos -it centos /bin/bash
 ```
+
+## Fedora / Debian / Ubuntu Cloud Images
+
+### Debian Official Cloud Images
+
+Repo:  http://cloud.debian.org/images/cloud/
+Debian 10 Bullseye: http://cloud.debian.org/images/cloud/bullseye/latest/ 
+Image: debian-11-nocloud-amd64.qcow2
+This image has root access passwordless (user: root, no password)
+
+
+### Fedora Cloud Images
+
+Fedora Cloud 32 Repo: /pub/fedora/linux/releases/32/Cloud/x86_64/images
+https://dl.fedoraproject.org/pub/fedora/linux/releases/32/Cloud/x86_64/images 
+Image: Fedora-Cloud-Base-32-1.6.x86_64.qcow2
+
+Fedora images have no root/user access. Image should be modified by virt-sysprep to set the root password:
+*virt-sysprep belongs to the libguestfs-tools package*
+$ sudo virt-sysprep -a Fedora-name-image.qcow2 --root-password password:newpasswd
+
+### Ubuntu Cloud Images
+
+Ubuntu Cloud Images Repo: https://cloud-images.ubuntu.com/ 
 
 
