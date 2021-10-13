@@ -83,20 +83,28 @@ $ sudo docker run --rm --name mycentos -h mycentos -it centos /bin/bash
 ### Debian Official Cloud Images
 
 Repo:  http://cloud.debian.org/images/cloud/
+
 Debian 10 Bullseye: http://cloud.debian.org/images/cloud/bullseye/latest/ 
+
 Image: debian-11-nocloud-amd64.qcow2
+
 This image has root access passwordless (user: root, no password)
 
 
 ### Fedora Cloud Images
 
 Fedora Cloud 32 Repo: /pub/fedora/linux/releases/32/Cloud/x86_64/images
+
 https://dl.fedoraproject.org/pub/fedora/linux/releases/32/Cloud/x86_64/images 
+
 Image: Fedora-Cloud-Base-32-1.6.x86_64.qcow2
 
 Fedora images have no root/user access. Image should be modified by virt-sysprep to set the root password:
+
 *virt-sysprep belongs to the libguestfs-tools package*
+```
 $ sudo virt-sysprep -a Fedora-name-image.qcow2 --root-password password:newpasswd
+```
 
 ### Ubuntu Cloud Images
 
