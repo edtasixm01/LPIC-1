@@ -1,0 +1,5 @@
+anna:12:barcelona
+pere:5:girona
+pau:33:girona
+julia:22:barcelona
+marta:22:girona
