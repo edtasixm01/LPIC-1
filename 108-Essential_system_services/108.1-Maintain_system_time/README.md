@@ -1,6 +1,6 @@
 # LPIC1
 
-## 108.1 (3) Maintain system time
+### 108.1 (3) Maintain system time
 
 Description: Candidates should be able to properly maintain the system time and ynchronize the clock via NTP.
 
