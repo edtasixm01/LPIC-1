@@ -2,6 +2,8 @@
 
 ### 109.2 (4) Persistent network configuration
 
+Description: Candidates should be able to manage the persistent network configuration of a Linux host.
+
 Key Knowledge Areas:
   * Understand basic TCP/IP host configuration.
   *  Configure ethernet and wi-fi network using NetworkManager.
