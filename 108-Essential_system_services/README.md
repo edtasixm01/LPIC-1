@@ -1,6 +1,6 @@
 # LPIC-1
 
-### Topic 108: (12) Essential system Services
+## Topic 108: (12) Essential system Services
 
  * 108.1 (3) Maintain system time
  * 108.2 (4) System logging

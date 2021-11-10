@@ -1,6 +1,6 @@
 # LPIC-1
 
-### Topic 109: (14) Networking Fundamentals
+## Topic 109: (14) Networking Fundamentals
 
  * 109.1 (4) Fundamentals of internet protocols
  * 109.2 (4) Persistent network configuration
