@@ -1,0 +1,32 @@
+FICHEROS DE CONFIGURACIÓN DE ENTORNO
+====================================
+1- Orden de los ficheros a consultar
+ a) Primero /etc/bash.bashrc | /etc/bashrc 
+ b) Segundo /etc/profile
+ c) Tercero ~/.bash.bashrc | ~/.bashrc
+ d) Cuarto ~/.bash_profile | ~/.profile
+
+### Definimos la misma variable en los 2 ficheros ### 
+vagrant@buster-64:~$ grep GLOBAL /etc/profile
+GLOBAL_PROFILE=test11
+vagrant@buster-64:~$ grep GLOBAL /etc/bash.bashrc
+GLOBAL_PROFILE=test22
+
+### Comprobamos que no está cargada ###
+vagrant@buster-64:~$ echo $GLOBAL_PROFILE
+
+### Abrimos sesión de no login ###
+vagrant@buster-64:~$ bash
+vagrant@buster-64:~$ echo $GLOBAL_PROFILE
+test22
+
+### Comprobamos que no está cargada ###
+vagrant@buster-64:~$ echo $GLOBAL_PROFILE
+
+### Abrimos sesión de login ###
+vagrant@buster-64:~$ bash -l
+
+### Comprobamos que carga /etc/profile en segundo lugar ###
+vagrant@buster-64:~$ echo $GLOBAL_PROFILE
+test11
+vagrant@buster-64:~$ 

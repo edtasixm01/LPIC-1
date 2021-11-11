@@ -1,0 +1,29 @@
+LABS SCRIPTS
+============
+
+1- Obtener los logins fallidos de usuario no existente en un fichero de log (/var/log/auth.log | /var/log/secure)
+ - Fichero de log pasado por usuario
+ - Comprobar si el fichero pasado existe
+ 
+2- Bucle que se repita hasta cumplir una condición
+ - Comparar una variable con un valor
+ - Incrementar variable hasta "romper" condición
+
+3- Reloj que muestre la hora segundo a segundo durante 30s
+
+4- Elección de múltiples casos
+ - a) sólo una vez, sin contemplar valores no válidos
+ - b) sólo una vez, contemplando valores no válidos
+ - c) repeticiones hasta escoger opción de salida o no válida
+ 
+=======================================================================================================
+
+CONDICIONALES
+if - fi
+case - esac
+
+BUCLES -  do ... done
+ - while
+ - for
+ - until
+      

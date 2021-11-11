@@ -1,0 +1,22 @@
+EJECUCIÓN DE SCRIPTS
+====================
+1- Ejecución "propia"
+ - Permiso de ejecución
+ - Ruta reconocible
+   - ./script     --> desde directorio actual
+   - /path/script --> ruta completa desde cualquier sitio
+   - script	  --> si tenemos el script en un directorio del PATH
+
+2- Ejecución sobre shell
+  - No necesario permiso ejecución
+  - sh script | bash script
+  - source script
+  
+VARIABLES EN SCRIPTS
+====================
+VAR=valor.   --> definimos variables dentro del script
+read	     --> leemos variables desde la stdin (usuario)
+$1, $2, $N   --> pasamos las variables con la invocación del script
+$HOME	     --> podemos hacer uso de variables de entorno
+
+

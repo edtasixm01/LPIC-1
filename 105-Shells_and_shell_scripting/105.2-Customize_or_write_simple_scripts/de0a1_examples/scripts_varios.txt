@@ -1,0 +1,54 @@
+#! /bin/bash
+
+if test -e file
+then
+  echo "HOLa"
+else
+  echo "Adios"    # Comentario
+fi
+
+========================================================
+#! /bin/bash
+#echo -n "Datos de entrada: "
+#read LISTA
+
+for VAR in `cat $1`
+do
+	echo "Esperando a " $VAR
+done
+========================================================
+#! /bin/bash
+
+VAR=0
+while [ $VAR -lt 10 ]
+do
+	echo "La variable vale "$VAR
+	let VAR=VAR+1
+	echo $VAR
+done
+========================================================
+#! /bin/bash
+
+echo "Como te saludo?: "
+read SALUDO
+echo $SALUDO
+
+echo -n "Y ahora?: "
+read SALUDO
+echo $SALUDO
+========================================================
+#! /bin/bash
+
+while [ "$VAR" != "Adios" ]
+do
+	if [ "$VAR" = "tonto" ];
+	then
+		echo "Por ahí mejor que no"
+		break
+	fi
+	echo -n "Que tienes que decirme?: "
+	read VAR
+	echo $VAR "no es lo que esperaba"
+done
+
+

@@ -1,0 +1,42 @@
+CONFIGURACION DE RED
+====================
+
+DEBIAN
+------
+- /etc/network/interfaces --> configuración tarjetas
+- /etc/network/interfaces.d --> fichero por tarjeta
+
+auto eth0 --> inicio en el arranque
+iface eth0 inet static|dhcp --> tipo de configuración
+  address A.B.C.D
+  netmask A.B.C.D
+  gateway A.B.C.D
+
+- /etc/resolv.conf --> servidores DNS
+
+CENTOS
+------
+- /etc/sysconfig/network-scripts/ifcfg-IFACE
+  ONBOOT=yes|no
+  BOOTPROTO=dhcp|none
+  DEVICE=[IFACE]
+  IPADDR=A.B.C.D
+  NETMASK=A.B.C.D
+  GATEWAY=A.B.C.D
+  DNS1=A.B.C.D
+  
+ROUTER LINUX
+------------
+Habilitar reenvío de paquetes
+ - echo "1" >/proc/sys/net/ipv4/ip_forward | /etc/sysctl.conf --> net.ipv4.ip_forward=1
+ - iptables -t nat -A POSTROUTING -s A.B.C.D/XX -o [IFACE] -j MASQUERADE
+ 
+Para convertir la máquina en un router "permanente" necesitamos ejecutar un script con esta información en el inicio del sistema:
+  a) /etc/init.d/
+  b) /etc/network/if-up.d/
+  c) /etc/network/interfaces --> post-up [IPTABLES]
+  
+  
+  
+
+ 

@@ -1,0 +1,23 @@
+COMPROBACIÓN DE CONEXIONES ABIERTAS
+===================================
+
+$ ps ax | grep ssh 
+
+ 1001 ?        SLl    0:00 /usr/bin/gnome-keyring-daemon --start --components=ssh
+ 1696 ?        S      0:00 /usr/bin/ssh-agent -D -a /run/user/1000/keyring/.ssh
+ 3448 ?        Ss     0:00 ssh -fgN -R 22131:127.0.0.1:22 AUB-958_LPIC-31@cero.deceroauno.net
+ 3449 ?        Ss     0:00 sshd: pue [priv]
+ 3455 ?        S      0:00 sshd: pue@pts/1
+
+Si la conexión está establecida, cerramos el proceso
+
+$ kill [PID] (en mi caso, 3448)
+
+ESTABLECER TÚNEL
+================
+$ ssh -fgN -R 22131:127.0.0.1:22 AUB-958_LPIC-31@cero.deceroauno.net   (En mi caso 131/31)
+(No debe pedir contraseñas)
+
+DESDE NUESTRO EQUIPO LOCAL
+==========================
+$ ssh -p 22131 pue@cero.deceroauno.net (En mi caso 131)
