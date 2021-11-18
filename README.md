@@ -49,24 +49,25 @@
 
 ---
 
-### Topic 105: (4) Shells and Shell Scripting
-
- * 105.1 (4) Customize and use the shell environment
- * 105.2 (4) Customize or write simple scripts
-
-
-### Topic 106: (4) User Interfaces and Desktops
-
-  * 106.1 (2) Install and configure X11
-  * 106.2 (1) Graphical Desktops
-  * 106.3 (1) Accessibility
-
-
 ### Topic 107: (12) Administrative Tasks
 
  * 107.1 (5) Manage user and group accounts and related system files
  * 107.2 (4) Automate system administration tasks by scheduling jobs
  * 107.3 (3) Localisation and internationalisation
+
+
+### Topic 109: (14) Networking Fundamentals
+
+ * 109.1 (4) Fundamentals of internet protocols
+ * 109.2 (4) Persistent network configuration
+ * 109.3 (4) Basic network troubleshooting
+ * 109.4 (2) Configure client side DNS
+
+
+### Topic 105: (8) Shells and Shell Scripting
+
+ * 105.1 (4) Customize and use the shell environment
+ * 105.2 (4) Customize or write simple scripts
 
 
 ### Topic 108: (12) Essential system Services
@@ -77,11 +78,17 @@
  * 108.4 (2) Manage printers and printing
 
 
-### Topic 109: (14) Networking Fundamentals
+### Topic 110: (10) Security
 
- * 109.1 (4) Fundamentals of internet protocols
- * 109.2 (4) Persistent network configuration
- * 109.3 (4) Basic network troubleshooting
- * 109.4 (2) Configure client side DNS
+  * 110.1 (3) Perform security administration tasks
+  * 110.2 (3) Setup host security
+  * 110.3 (4) Securing data with encryption
+
+
+### Topic 106: (4) User Interfaces and Desktops
+
+  * 106.1 (2) Install and configure X11
+  * 106.2 (1) Graphical Desktops
+  * 106.3 (1) Accessibility
 
 
