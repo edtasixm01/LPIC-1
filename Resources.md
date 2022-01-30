@@ -17,13 +17,13 @@
 
 ### VM Virtual Machines
 
- * [**Recomended**] [PUE x64 Centos + Debian. Dual boot CentOS 7 and Debian 9 x64 64 bits 5.2GiB centian_x64.ova](https://u.pcloud.link/publink/show?code=XZ0DKtkZax09QKYCk3hG3G6MuFQyhzbeECSk)
+ * [PUE x64 Centos + Debian. Dual boot CentOS 7 and Debian 9 x64 64 bits 5.2GiB centian_x64.ova](https://u.pcloud.link/publink/show?code=XZ0DKtkZax09QKYCk3hG3G6MuFQyhzbeECSk) [**recomended**]
 
  * [PUE i386 Centos + Debian. Dual boot CentOS 7 and Debian 10 i386 32 bits 5.1GiB centian_i386.ova](https://u.pcloud.link/publink/show?code=XZcRI2kZmrD0lK2zjE7A3sY5xbdEVJKYWIty)
 
  * [CentOS minimal (netinstall). CentOs 7 x86_64 64 bits 2009 973MiB](https://u.pcloud.link/publink/show?code=XZ952BXZWRF0MNlrvD7IzVqiRd0ejmrp5rvV)
 
- * Usuaris de las màquines: linux / linux root / toor
+ * Usuaris/password de las màquines: linux / linux, root / toor
 
  * [PUE LAB https://labs.pue.es](https://labs.pue.es)
 
@@ -84,9 +84,11 @@ $ sudo docker run --rm --name mycentos -h mycentos -it centos /bin/bash
 
 Repo:  http://cloud.debian.org/images/cloud/
 
-Debian 10 Bullseye: http://cloud.debian.org/images/cloud/bullseye/latest/ 
+Debian 11 Bullseye: http://cloud.debian.org/images/cloud/bullseye/latest/ 
 
 Image: debian-11-nocloud-amd64.qcow2
+
+[**recomended**] 
 
 This image has root access passwordless (user: root, no password)
 
