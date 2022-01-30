@@ -86,7 +86,7 @@ Repo:  http://cloud.debian.org/images/cloud/
 
 Debian 11 Bullseye: http://cloud.debian.org/images/cloud/bullseye/latest/ 
 
-Image: debian-11-nocloud-amd64.qcow2  [**recomended**] 
+Image: debian-11-nocloud-amd64.qcow2 (297M) [**recomended**] 
 
 This image has root access passwordless (user: root, no password)
 
