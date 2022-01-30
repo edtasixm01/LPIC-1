@@ -6,7 +6,7 @@
 **PUE Labs**
 
  * [PUE Labs](https://labs.pue.es). Accés a les VM Maquines Virtuals del PUE. Per a aquest curs 
-   disposem de una VM CentOS 8 i una VM Debian 10 Buster.
+   disposem d'una VM CentOS 8 i una VM Debian 10 Buster.
 
 
 **Github edtasixm01**
@@ -17,8 +17,8 @@
 
 **Moodle**
 
-  * Moodle del PUE amb enllaços a continguts. L'utilitzarem especialment per a fer qüestionaris.
-    Recordeu que cal passar un test a la meitat del curs i un altre al final.
+  * [Moodle PUE](https://lms.pue.es/)Moodle del PUE amb enllaços a continguts. L'utilitzarem especialment per a fer qüestionaris.
+    Recordeu que cal realitzar un test a la meitat del curs i un altre al final.
 
 
 **Altra documentació**
