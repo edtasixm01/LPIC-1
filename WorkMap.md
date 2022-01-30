@@ -17,7 +17,7 @@
 
 **Moodle**
 
-  * [Moodle PUE](https://lms.pue.es/)Moodle del PUE amb enllaços a continguts. L'utilitzarem especialment per a fer qüestionaris.
+  * [Moodle PUE](https://lms.pue.es/). Moodle del PUE amb enllaços a continguts. L'utilitzarem especialment per a fer qüestionaris.
     Recordeu que cal realitzar un test a la meitat del curs i un altre al final.
 
 
