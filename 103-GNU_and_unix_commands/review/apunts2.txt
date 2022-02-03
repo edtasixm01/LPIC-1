@@ -1,0 +1,106 @@
+Lab:
+  usuari pue
+  passwd cangetin
+
+d rwxr-xr-x 2 pue  pue  4096 sep 29  2020 Descargas
+
+tipus
+  d directori
+  - regular file
+  l link
+  b blocks
+  c character
+  s sockets
+  p pipes
+
+permisos
+  rw-r-----
+
+Usuari propietari
+Grup   propietari
+Mida
+Data
+nom
+
+Ruta relativa
+   ~$ ls jocs/cartes
+
+Ruta Absoluta
+   ls /ruta1/al/fitxer/desti
+
+
+Directoris temporals
+  /tmp      (volatil ramdisk)
+  /var/tmp  (permanent)
+
+Instal.lar ordres:
+  $ sudo apt-get install tree
+
+tres time stamps
+
+cd
+mkdir [-p]
+rmdir
+tree
+file (magic number)
+stat
+
+Significat de la paraula home
+    el directori de l'usuari
+    /home/nom-usuari (per defcete per no sempre)
+    /home
+    $HOME
+
+# -------------------------------------------------------------
+
+. directori actiu
+.. directori pare
+
+
+cp [opcions]   origen dest
+    -r -R -a   origen... dir-desti
+               origen dir/nom-nou
+
+mv [opcions] origen detsi
+   mou elements (files directories)
+   renombrar elements (files directories)
+   --> no t la opci r de recursiu! ja ho fa sol
+
+rmdir dir (noms si est buit)
+rm file... esborra fitxers
+
+ls -rl dir
+rm -rf dir    (esborrar tot el directori i el seu contingut)
+rm -rf dir/*  (esborrar el contingut del directori per NO el directori)
+
+# Path name expansion // file globbing
+*     qualsevol carcter de 0 a n vegades
+       *.txt a*  *a *a*
+?  char 1 obligatori
+[abc]    1 char obligatori --> un de la llista
+[^abc]   1 char obligatori --> un que NO sigui a la llista
+
+# --------------------------------------------
+# buscar fitxers
+
+uptdatedb (cron tasca periodica)
+locate
+
+find dir...      -name nom   -print
+                             -print0
+     on-buscar    test       accions
+
+test:
+  -name
+  -size
+  -user   -group  -empy
+  -type
+  -newer -mtime -mmin
+
+# -------------------------------------
+
+split comprimir: gzip / gunzip
+comp diff diff3
+ - 0-9  grau de compressio (temps/espai)
+
+
