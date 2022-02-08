@@ -1,0 +1,215 @@
+# 103.4 Pipes, redirects
+
+stream o fluxe
+ 
+  0  stdin standard input (entrada) 
+  1  stdout standard output  (sortida)
+  2  stderr standard error   (sortida d'error)
+
+redireccionament
+ 
+   >   sortida estandard 1> 
+   2>  sortida d'error 
+   <   entrada estandard
+
+  ordre   >  file.txt
+  ordre 2> file2.txt
+  ordre > file.txt 2> file2.txt
+
+  overwrite // sobreescriure:  >  2>  &>
+  append // afegir:  >> 2>>  &>>
+
+
+  /dev/null per descartar la sortida
+
+  ordre  > file.txt 2> file.txt <--- ERROR!
+  &>  overwrite  
+  &>> append
+
+  1>&2  >&2  enviar la sortida estandard on hi ha la d'error
+  2>&1       enviar la sortida d'error on hi ha la estandard
+
+       problema: aquest operador ha d'anar al final
+      ls / /patata > file.log  2>&1
+      ls / /patata 2> file.log  >&2
+
+  No es pot fer:
+       ordre < file > file
+           el contingut de file queda destruit
+
+
+ ^d fi de flux
+
+--------------
+
+Pipe  tuberia
+
+    ordre1 | ordre2 | oredre....
+
+     ordre1 | ordre2  ---> la sortida de la ordre1 
+                            es la entrada de la ordre2
+ 
+
+     ordre1   |   tee  [-a]  file.log
+
+
+
+
+
+
+
+---------------
+
+1. ls /bin /patatum
+2. ls /bin /patatum 2>/dev/null
+3. find /boot -name *img* 2>/dev/null
+
+5.  head -n15 /etc/passwd  > users.txt 
+6.  cat /etc/passwd /etc/group > concat.txt
+7.  ps ax > procs.txt
+
+8. free >> proc.txt
+9. tree / > treok 2> trerror 
+10. ls ~  /patata 1> file.log 2> file.log -> incorrecte
+    
+    ls ~ /patata  &>  file.log
+    ls ~ /patata  > file.log   2>&1
+11. command 1>&2 2> file.log  ------> malamente
+    command 2> file.log 1>&2
+
+12. tail -n 11 /etc/passwd | tee -a prova.txt
+13. grep "1" /etc/passwd | tee -a file.txt 
+14. grep "1" /etc/passwd | wc -l | tee -a file.txt 
+
+15. echo carta.txt treball.pdf fit1 fit2 fit3 | xargs touch 
+16. ls /home -d | grep "D*"| xargs du -sh 
+
+=========================================================
+Processos
+=========================================================
+
+Processos:
+       usuari 
+       grup
+ps 
+   PID Process ID
+   PPID Parent PID
+   
+   PID 1  init, systemd 
+      kernel  + systemd/init 1
+ 
+  ps ax ,   ps -ef, ps aux
+  pstree [-lap]
+  pgrep -l nom
+  pgrep -lu nom
+  pidof
+
+  watch
+  time
+
+Signal
+     kill -l
+        1 SIGHUP HUP reiniciar
+
+     kill PID ---> senyal 15 SIGTERM
+      15, 9, 2 ^c, 19 ^z ^s , 20 ^q, 14 alarma
+  
+     kilall
+     pkill
+
+foreground / background
+    primer pla (atenci: apropiatiu de la consola)
+    segon pla (jobs)
+          odre & 
+          es mala idea usar la consola! 
+          redirigir stdout i stderr
+    fg %job, fg pid  reanudar en primer pla
+    bg %job, bg pid  reanudar en segon pla
+    ^z   aturar
+    
+Nice & renice
+    [-20 ... 19 ] enrotllats -20 max 19 minim
+     defecte nice priority 0  
+    usuaris: 0-19  podem empitjorar 
+    root [-20 .. 19 ]  -20 --- 0 mes
+                               0 ---- 19 menys prioritat
+
+    renice  canviar a processos existeixen
+    nice per executar nous processos
+
+
+
+
+
+-----------------------------
+
+1.ps ax ps-ef 
+
+2.pstree -l 
+  pstree -ap 
+  pstree -asl
+
+3. pgrep -lu root 
+
+4. pidof systemd 
+
+5. pstree -s PID 
+
+6. pgrep -l "sys" 
+
+7. ps -o pid,ppid,user,%cpu,%mem,cmd
+ 
+
+11. kill -l 
+
+12. sleep 12345 & 
+    pkill sleep 
+
+13. bash 
+    kill -9 PID-bash
+
+14. sleep 1111 &
+    sleep 2222 &
+    sleep 3333 & 
+    killall sleep 
+
+15 ...
+   jobs 
+
+16. fg %2 
+
+17. ^z 
+
+18. bg %2
+    kill -18 %2 
+
+19.  ^C 2 SIGINT  (interrupt)
+
+-------------------------------------------------
+
+1. ps -l
+
+
+2. sleep 12345 &; sleep 67890 & 
+   ps -l NI= 0 
+
+
+3. renice -n 5 -p PID1
+   renice -n 15 -p PID2 
+
+4. ps -l
+
+5. nice -n 19 sleep 999999 &
+
+6. nice sleep 44444 &
+   ps -l
+   10
+
+
+
+
+
+
+-------------------------------------------------
+
+
