@@ -1,0 +1,125 @@
+# 4 apunts
+# LPI 103.7 Regex
+
+Expressions regulars
+  - basiques
+  - exteses
+
+Basiques
+  ^ inici
+  $ final
+  [abc] 1 char de la llista
+  [^abc] 1 char NO de la llista
+  .   un carcter qualsevol ha de ser-hi
+  _*  el carcter anterior de 0 a n vegades
+
+Exteses
+  grep -E
+  egrep 
+  sed -r  sed -E
+
+  _+ el carcter anterior 1 o + 
+  _? el char anterior 0 o 1 vegada
+  _ {} {n} {m,n} {m,} 
+  |   patro|patro
+ 
+  a* a?
+  aa* a+
+  aaa* {2,}
+  aaa  {3}
+
+
+
+sed  'inici, fi s/ busco   /  remplac   / '
+     ' /patro/  s/busco/remplac/g' 
+
+
+-----------------------------------------------
+
+
+
+1. grep root /etc/passwd 
+2. head -n12 /etc/passwd | grep -w root 
+3. tail -n16 /etc/passwd | grep "nologin$" 
+4. grep  ":42:" /etc/group 
+   grep   "42"  /etc/group
+         "^xxxxx:yyyyy:42:"
+           [^:]* [^:]*
+
+5. grep -w "2[0-9]" /etc/group 
+
+6. echo "12345678A" | grep -E ^[0-9]{8}[A-Z]$ 
+7. echo 10/23/22 | grep -E ^[0-9]{2}"/"[0-9]{2}"/"[0-9]{2}$
+8. grep -i "http" /etc/services 
+9. grep -v "#" /etc/fstab 
+
+
+-------------------------------------------
+
+  i insert
+  a inser despres cursor
+  o inser linia nova sota
+  O                  sobre
+ dd delete line
+ 3dd esborra 3 linies
+ d3d 
+  u  undo
+  ^r redo
+  .  repetir la accio
+
+  gg
+  G
+  nG
+
+  yy yank (copy)
+  2yy
+  p paste 
+
+  /patro  recerca  endavant
+     n seguent N anterior
+
+  ?patri   recerca amunt
+     n         N
+
+
+---------------------------------------------------
+Permisos 104.5
+
+   usuari: UID   GID (grup principal) altres grups (secundaris)
+
+    permisos                     propietar  grup
+-  rw-     r--    r--       1      pue      autonoma  12 feb 10 21:14 file2
+   usuari grup    altres
+                
+                Octal
+    r read      4
+    w write     2
+    x execute   1
+    - no        0
+
+     chmod  x x x   file
+           u  g a 
+
+     rw- r-- -w-   ----> amb poc sentit
+     6   4    2
+
+ Fitxers:
+     rw-   r--  ---  
+ 
+ Fitxers executables:
+     rwx   r-x  --- 
+
+ Directoris 
+     r read
+     w write
+     x drets admiistrtius, x significa poder fer cd
+ 
+     rwx   r-x       ---
+           navegar
+     directoris: r-x han d'anar juntes
+
+
+
+
+
+
