@@ -1,0 +1,423 @@
+# Sessio 5
+
+
+chmod 640 file
+
+  files:  rw- r-- ---
+  files executables rwx  r-x ---
+
+  directoris rwx r-x ---
+
+  files: caixa de sabtes  els permisos afecten dins la caixa
+  directori: com un armari, els permisos afecten que podem posar a l'armari
+
+  directori:
+     nom inode  ---->  inode
+                       informaci descriptiva
+                            ----------------------> blocks de disc
+  chmod user - grup - altres
+
+   un inode no cont el nom de l'element.
+
+r w x
+4 2 1
+
+Exercicis 
+1. cd /tmp/lpi
+    touch file1.txt file2.pdf
+    mkdir data
+
+2.  chmod 640 file1.txt 
+          rw- r-- ---
+          
+3. chmod 664 file2.pdf 
+         rw- rw- 4--
+
+4. chmod 755 data
+         rwx r-x r-x
+
+5. chmod 770 data
+   
+6. ls -i
+
+7. stat file1.txt 
+   stat data
+
+8. name inode
+        info del inode:  
+
+-------------------------------------------------------
+
+umask
+ 
+definible per usuari
+
+             666 (ffile)  777 (dir)
+    -  mask  022          022
+     ---------------------------
+             644          755
+           rw- r--       rwx r-x 
+
+           0   2  6       0   2   7
+          rw- r-- ---    rwx r-x --- 
+
+    pensat per no aplicar la x en fitxers per defecte
+    pensat per tenir la x els directoris
+
+Mascares amb sentit:
+
+
+Canviar de propietari i grup
+           
+ chown  user file/dir
+ chown  pere file1
+ 
+ chown  user.group  file/dir
+        user:group      
+ 
+ chown  pere.lpi dir1  ->  dir1 pertany a pere i al grup lpi
+ chown  .users   file1 ->  file1 pertany al grup users
+
+Cap usuari del sistema excepte "root" pot fer chown 
+per canviar l'usuari
+
+Per canviar de grup: l'usuari ha de pertanyer tamb al grup desti
+
+
+chgrp group file/dir
+ 
+unicament per canviar de grup
+
+Exercicis:
+
+9 - umask 
+
+10.umask 0027
+               666 777
+               027 027
+               640 750 
+
+11.umask 0022
+
+12. sudo chown  user1 newfile1
+
+13. sudo chown user2.students newfile2 
+
+14. sudo chown .teachers newdir1
+         chgrp teachers newdir1
+
+15. chown  .teachers newdir2
+    chgrp  teacjers newdir2
+
+
+-----------------------------------------
+
+Permisos simbolics
+
+  chmod  +x file.sh
+    r w x -  simbolics 
+    + activar
+    - desactivar
+    = assignar
+    u user, g group, o others, a all
+    conjunts separats per coma:  ug+rw,o-x
+    ug+rw   u=rw   go=u
+
+Exercicis
+
+16. touch program1.py pogram2.py
+     chmod +x program1.py program2.py
+
+17. chmod go-w program1.py
+
+18. chmod go=u program2.py
+
+19. chmod u=rwx,g=rx,o=- newdir1
+    chmod 750  newdir1
+
+20. chmod a-wx newdir1
+
+
+---------------------------------------------
+
+Permisos avancats directoris
+
+ SetUID      4
+ SetGID      2
+ Sticky Bit  1
+
+  chmod 3755 dir1
+        3
+         2 setGID
+         1 sticky bit
+
+
+ SetUID:  no t sentit en directoris, no s'utilitza
+
+ SetGID: serveix per assignar als nous elements de dins del directori
+         el grup al que pertany el directori.
+         el que s'ha creat no es modifica de grup
+
+          rwx rws  r-x  
+                x
+                s setGID
+
+              rwS
+                - no hi ha la x, perms mal posat
+                s setGID
+
+ sticky bit
+        nomes els propietaris del fitxer o directori poden esborrar-lo,
+        amb independencia de que el permis del directori sigui 777
+  
+        rwxrwxrwt       1777
+                x, t 
+
+        rwxrwxtrwT
+                 no x, permis mal posat
+
+----------------------------------------------
+
+Permisos especials per fitxers
+
+  SetUID       4
+  SetGID       2
+  Seticky Bit  1  no s'aplica actualment
+                  (servia per mantenir el fitxer en memoria)
+
+  SetUID
+    
+     per executar programes en nom del propietari del fitxer
+ 
+  SetGID 
+
+    per executar programes en nom del grup del fitxer
+
+
+  Saber: quan s'executa un programa es fa en nom de l'usuari u grup que l'esta executant
+
+  perill de generar cavalls de troya
+ 
+Exercicis
+
+21. chmod +t newdir1
+
+22. chmod 1777 newdir2
+
+23. 1766 ---> rwxrw-rwT
+    t  rwx rw-  rw-
+
+24. chmod g+s newdir1  
+
+25. chmod 2775
+
+26  chmod u+s file1
+
+27  chmod 6755
+          rws r-s r-x
+        (4+2)   7   5   5
+
+28 passwd ---> setUID
+   write / wall ---> setGID
+
+29
+
+30 
+
+
+
+----------------------------------------------------------
+Hard links
+
+  ln orgen desti
+
+  1) no es pot de directoris
+  2) no es pot de cross reference device
+
+
+Symbolic link
+  poden ser de directoris i cross-reference
+
+   ln -s origen desti
+   quan el desti s remot l'origen ha de ser una ruta obsoluta
+
+
+1 ln users.txt peope.txt
+
+2 ls -li users.txt
+
+3 stat users.txt
+
+8 ln -s names.pd mynames.pdf 
+  ls -li
+
+9 ln -s objects.pdf  dir1 --> malament broken link
+  ln -s /tmp/lpi/objects.pdf  dir1
+     
+10 ln objects.pdf
+   ls -l ---> broken link no apunta a cap contingut
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+# ------------------------------------------------
+
+Installar software
+
+   - directament obtenir un binari executable
+     (si fa falta PATH)
+
+   - tar.gz   paquet tar de software
+              desempaquetem i ja conte l'executable
+
+              paquet tar software orginal per compilar
+              extreure
+              make config install
+           
+             configure
+
+   - paquet RPM / DEB
+            RPM RedHAt Fedora Centos
+            DEB debian ubuntu
+
+            paquet binaris executables
+            paquet source  fonts .... compilacio
+
+        paquets 'en cru' problema de les dependencies
+
+   - Repositoris publics de les distibucions, altres repos i 
+     repos privats de desenvolupadors
+
+         - reposotiris de la distibucio
+         - repositoris amb 'extres' 
+         - els programes audio i video
+
+   - Ordres per gestionar directament els paquets
+          dpkg  DEB
+          rpm   RPM
+
+   - ordres per gestionar paquets usant repositoris 
+          apt apt... aptitude DEB
+          yum dnf  RPM
+
+   
+    - software de docker
+                  adobe 
+           baixar-te la configuracio d'un repositori
+
+installar --> binaris executables documentacio configuracio
+     remove esborra executables documentacio, pero no config
+     purge  esborra tot 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+ 
