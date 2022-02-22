@@ -1,0 +1,187 @@
+104.1 Particions
+
+    noms de les particions /dev/sdb3
+                           /dev/sda7 (tercera lgica del primer disc)
+
+   odres: fdisk, gdisk, parted, gparted
+
+       fdisk /dev/sda
+       
+    dd if=/dev/zero of=disk01.img bs=1k count=2M
+                blocs 1k
+                size= 1k * 2M = 2G 
+
+    identificar: nom de device, LABEL, UUID
+
+    odres: lsblk blkid, fdisk -l,  tree /dev/disk
+
+
+    Crear particions:
+           taula de particions dos (MBR)  (4 primaris, 1 d'elles extesa)
+           taula GPT  (128)
+
+    filesystems (fs)  
+         
+          mkfs -t ext4
+          mkfs.xfs .ext4 .reiserfs 
+
+
+
+104.3 mount / umount /fstab
+     
+       root es l'unic  user  (qualsevol pot muntar i desmuntar)
+                       users (qualsevoll pot muntar i qualsevol desmuntar)
+
+       losetup /dev/loop0 linux.img
+          associa un disc raw a una partici /dev/loop0
+
+       mount    device-origen mount-point
+             -t fstype
+             -o (options) .... rw ro remount, user, users
+
+
+       mount /dev/loop0    /mnt
+             /dev/sdb1   
+
+       umount device
+              mount-point
+              device mount-point
+
+       
+        mount /dev/sdb2               /mnt
+              LABEL=dades 
+              UUID="5455464646466446" 
+
+       e2label /dev/sdb1  etiqueta
+
+
+       swapon [-a]
+       swapoff
+
+ # Quan no podem desmuntar perqu est ocupat
+
+       lsof       mount-point
+       fuser -v   mount-point
+
+  # Generar un CD
+  
+       git clone https://github.com/edtasixm01/LPIC-1.git
+       
+       xorrisofs (paquet xorriso)   genisoimage   mkisofs 
+       
+        mount -t iso9660 lpi.iso /mnt/
+
+# ---------- fstab: filesystem tabulation ---------------------
+
+ Filesystems a muntar automaticament en engegar el sistema
+
+   device      mountpoint  fstype    options     dump check
+   /dev/sbd1   /jocs	   ext4      defaults     0     0
+   /dev/sda6   swap        swap       defaults 0 0 
+
+    mount -a
+
+
+     mkswap swapon [-a] swapoff 
+
+# ----------------------------------------------------------
+     
+    df -h -t fstype
+    du
+
+    tune2fs 
+        -i    interval en dies (w, m) que cal fer el fsck
+        -c   count del numero de vagades que s'ha fet el mount i cada
+             quant cal fer el fsck 
+        definir el count de muntatges o l'interval de dies,
+        quan un d'ells es compleix es fa el fsck
+
+     dumpe2fs /dev/loop0 | grep superblock
+     e2fsck -b 888912  /dev/loop0
+               indicar el nou superblock a usar
+
+     fsck    [-f] /device
+     e2fsck  
+
+
+# --------------------------------------------------------------
+
+   Virt-manager === virtualbox
+
+    Kvm + qemu + libvirtd 
+
+Debian
+
+    apt-get  update 
+    apt-get install virt-manager
+    systemctl status libvirtd
+
+Centos
+
+    dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos
+    dnf distro-sync
+    dnf install @Virtualization
+
+# ---------------------------------------------------
+
+   vdb 2G
+          vdb1 extended tot el disc
+            vdb5  linux 500M
+            vdb6  swap  500M
+            vdb7  xfs   500M  (xfsprogs)
+
+   posar etiqueta al linux
+
+   prova de muntar manualment a /mnt
+
+   configurar /etc/fstab per muntar:
+         linux  ---> /mnt
+         swap
+         xfs  ----> /media
+
+   mount -a
+   
+   * atencio: comentar les linies del /etc/fstab si volem
+     tornar a usar la mquina debian 'sola'
+
+
+# Instal.lacio via HTTP d'una VM
+
+   baixar la iso + instal.lacio
+
+   Fedora: panell general 
+
+        idioma, teclat, hora, 
+        * package selection: minimal
+        * destionation 
+
+
+
+
+
+
+
+
+
+ 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
