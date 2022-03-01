@@ -1,0 +1,179 @@
+# Arquitectura
+
+
+uname 
+dmesg
+
+lspci
+lsusb
+lsmod
+modinfo
+
+  /etc/udev/rules.d      --   /etc configuracio ++ 
+  /usr/lib/udev/rules.d  ---> /user/lib instal.lacio +
+
+  Idetifica info i modul del kernel IRQ
+        - targeta de video
+        - targeta de xarxa
+        - targeta de so
+
+        - mouse
+        - tablet escriptura / usb / 
+--------------------------------------------------
+
+101.2
+
+  BIOS --- xip MBR
+  UEFI  --- xip + /boot/efi
+
+  power
+    Bios/UEFI
+       POST power on self test
+       detectar els components
+       setup (bios) boot order (HD)
+           MBR / EFI BootLoader carregador d'arrencada
+             Bootstrap
+                  ------> GRUB (boot loader) menu d'arrancada
+                           kernel    opcions
+                           initrd          
+                                  ----->  (1) systemd
+                                              initd
+                                                 ---> engegar serveis
+
+    sysV  init
+    systemd
+    upstartp  (ubuntu)
+
+------------------------------------------------------------------
+
+1 BIOS (POST) Setup 
+  MBR / UEFI
+  Bootloader (stage1)
+         Grub
+            kernel + initrd
+                 systemd / init
+
+3  MBR
+4  /boot/EFI
+
+5  GRUB
+
+6 ro rw quiet splash 
+7 root=/dev/sda3
+8 quiet
+
+10 /boot
+13 sysV systemd upstart
+
+------------------------------------------------------------------------
+
+# SysV ---> Runlevels
+     0 halt
+     1 monousuari root (rescat)
+     3 text multiusuari
+     5 grafic
+     6 reboot
+
+  /etc/init.d 
+         tots els serveis
+  /etc/rc0.d
+         knumfile per apagar el servei (links)
+         snumfile per engegar el servei (links)
+
+# systemd
+
+    
+   /etc/systemd/system      configure
+   /usr/lib/systemd/system  install
+   /run/systemd/system      execucio
+
+  un servei concret:
+    systemctl  start top restart reload mask enable disable...
+      
+       enable/disable    (quan engegui la maquina)
+       start / stop      (ara)
+
+  serveis 
+       nom.service   apache2.service
+                     ssh.service
+
+   systemd ---> units
+                .service, .targets .device .mount .socket
+
+
+   caviar de target
+
+      systemctl isolate nom.target  
+      tellinit num
+      init num
+
+   emergency.target
+   rescue.target
+   init=/bin/bash
+
+# ------------------------------------------------------------
+
+1 systemctl list-units
+
+2 systemctl start apache2
+
+3 systemctl status apache2
+            show
+           is-active
+
+4 systemctl restart apache2
+           (reload) 
+
+5 systemctl stop apache2
+
+6 systemctl enable apache2
+
+7 systemctl disable apache2
+
+8 systemctl get-default
+
+9 systemctl is-active multi-user.target
+10                    graphical.target
+
+11 ls /usr/lib/systemd/system/default.target
+12 systemctl list-dependencies graphical.target
+13                                              | grep target
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

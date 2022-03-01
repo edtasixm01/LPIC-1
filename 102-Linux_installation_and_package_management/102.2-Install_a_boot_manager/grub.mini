@@ -1,0 +1,41 @@
+set default=0
+set timeout=-1
+menuentry 'mylinux test grub' {
+  insmod gzio
+  insmod part_gpt
+  insmod ext2
+  linux /boot/vmlinuz-5.10.0-11-amd64 root=/dev/sda1 quiet ro
+  initrd /boot/initrd.img-5.10.0-11-amd64
+}
+submenu 'my submenu' {
+  menuentry 'mylinux 1' {
+    insmod gzio
+    insmod part_gpt
+    insmod ext2
+    linux /boot/vmlinuz-5.10.0-11-amd64 root=/dev/sda1  ro 1
+    initrd /boot/initrd.img-5.10.0-11-amd64
+  }
+  menuentry 'mylinux rescue' {
+    insmod gzio
+    insmod part_gpt
+    insmod ext2
+    linux /boot/vmlinuz-5.10.0-11-amd64 root=/dev/sda1  ro systemd=rescue.target
+    initrd /boot/initrd.img-5.10.0-11-amd64
+  }
+
+  menuentry 'mylinux emergency' {
+    insmod gzio
+    insmod part_gpt
+    insmod ext2
+    linux /boot/vmlinuz-5.10.0-11-amd64 root=/dev/sda1 ro systemd=emergency.target
+    initrd /boot/initrd.img-5.10.0-11-amd64
+  }
+
+  menuentry 'mylinux init bash trick' {
+    insmod gzio
+    insmod part_gpt
+    insmod ext2
+    linux /boot/vmlinuz-5.10.0-11-amd64 root=/dev/sda1 rw init=/bin/bash
+    initrd /boot/initrd.img-5.10.0-11-amd64
+  }
+}
