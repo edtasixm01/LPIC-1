@@ -1,0 +1,40 @@
+# Admin usuaris i grups
+
+Useradd
+
+  -N usuria egoistes en el seu propi grup si no posem la -N
+     el sistema es pot comportar que crea o no grups propis
+
+  -g grup principal
+      (escara que s'especifiqui si no hi ha la -N pot ser que
+       no li faci cas)
+
+  -G grups secundaris
+  -s shell
+
+  -m obligar que es creei el directori home
+
+  -m -k directori-skel
+ 
+   -b basehome
+   -d ruta-absoluta-al-home
+
+        -b /home
+            pere--> /home/pere
+            marta ---> /home/marta
+         
+           -b  /home/alumnes/metall
+                  jordi ---> /home/alumnes/metall/jordi
+
+           -b /home/alumnes/informatica
+                  anna -->  /home/alumnes/informatica/anna 
+  
+
+        -d /home/vendes/pere
+             pere --->  /home/vendes/pere
+ 
+        -d /home/vendes/marta
+             marta ---> /home/vendes/marta
+
+
+

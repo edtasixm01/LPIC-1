@@ -1,0 +1,193 @@
+# usermod
+
+   usermod -s -g -G -u 
+      -g grup principal
+      -u uid
+      -G grups secundaris
+         assignacio incondicional
+         llista separada per comes
+      -a append combinat amb -G
+         afegeix els grups secundaris als ja existents
+
+# userdel
+     no esborra el home  
+        (admin en fara una copia a un altre lloc)
+     -r si esborra el home
+     si l'usuari te de grup principal un grup propi
+     també l'esborra (el grup)
+
+Exercicis
+
+1. sudo useradd -N -m -s /bin/sh -u 2020 -g users -G sudo,bin pere 
+
+2. mkdir /tmp/projecte
+   sudo useradd -N -M -g users -d /tmp/project marta
+
+3. modificar /etc/default/useradd 
+   sudo useradd -D -s /bin/bash -g bin
+
+4. sudo usermod -s /etc/bash -g users -aG sudo,games anna  
+5. mkdir /etc/skel_pue
+     posar-hi xixa
+   cp -r /etc/skel  /etc/skel_pue
+
+   cp -r /etc/skel /etc/skel_pue 
+   useradd -m -k /etc/skel_pue jan 
+
+7 userdel -r pere1
+
+----------
+
+### Grups
+
+   /etc/group
+      gname : passwd : GID : user_list
+
+  /etc/gshadow
+  
+  groupadd, groupmod, groupdel
+
+  No es pot esborrar un grup si té usuaris que hi 
+    pertanyen com a grup principal
+
+  En esborrar un usuari 'egoista' s'elimina també
+  el seu grup principal
+
+Exercicis de grups
+
+  1. sudo groupadd dads 
+
+  2. sudo groupadd moms 
+
+  3. sudo useradd -N -g dads -G users,moms pere
+
+  4. sudo groupmod -n daddys -g 2022 dads 
+
+  5. groupdel moms
+
+  6. userdel -r pere
+     groupdel dads  
+
+    - - - - - - - - - - - - - - - - - - 
+
+# Password policies
+
+   useradd user
+   passwd user
+
+   passwd -l lock
+          -u unlock
+          -d passwordless (no cal password)
+          -S status
+          -e cal canviar el passwd a la nova sessió
+
+   Chage 
+      -l list
+      -m -M -W -I  
+      -E expiració del compte
+      -d 0  cal canviar el passwd en el següent 
+            inici de sessió
+            (aquesta dada està a la data de canvi
+             del passwd) 
+
+
+Exercicies
+   
+7. userad pere
+   passwd -d pere
+8. passwd -l pere
+9. passwd -u pere
+10 passwd -e pere
+   chage -d 0 pere
+11. chage -E 2022-03-06 
+    chage -E  $(date -d +3ays +%Y-%m-%d )
+
+# 107.2 cron / at / batch
+  tasques de sistema
+
+  at    enun instant puntual
+  cron  tasques periodiques
+  batch quan el sistema pugui
+
+
+Cron 
+  /etc/crontab ---> tasques de sistema
+   # minuts hores dia(1-31) més dia-setmana(0-7) usuari ordre 
+
+  crontab -e ---> tasques de l'usuari 
+                  cada usuari pot definir les seves 
+ 
+  usuari crontab -e
+        demana quin editor usar
+        EDITOR=/usr/bin/nano
+
+  # minuts hores dia(1-31) més dia-setmana(0-7) ordre 
+     
+     minuts *  0-59 
+             4  1,4,46 30-50 */4 
+             4,10-45,59
+             */4 cada 4 minuts
+     hores 0-23
+     dies 1-31
+     més 1-12
+     dia-setmana 0-7
+                 0 diumenge 7
+                 1-6 dilluns a dissabte
+   
+    atenció 
+      min hor dia   mes   dia-set
+      0   12  1-15  *     1-5     ordre
+       els laborables (1-5) que siguin dies del 1-15 del més       
+
+    atenció
+      0 8 * * 1-5 ordre
+      * oju que això vol dir fer-ho 60 vegades
+
+    atenció
+      backups les nits de dilluns nit a divendres nit
+      0 1  * 1-7,9-12 1-5 tar....
+                      malamente! (la nit del diumenge)
+                      2-6
+
+    La sortida de les ordres del cron:
+                -descartar-la
+                -desar en un fitxer tipus log
+
+           sinó s'envia a l'usuari per email
+           (el email intern està desactivat)
+
+# Control accés
+     cron.allow
+         noms usuaris que SI poden usar cron
+              tots els altres NO poden
+
+     cron.deny 
+         noms  usuaris que NO poden fer cron
+               tots els altres si poden
+
+     lo normal és que només hi ha un dels dos fitxers
+     si hi ha els dos preval cron.allow
+
+# -------------------------------------------------------
+
+1)  crontab -e
+    0 8,16 * * 1-5  du --max-depth=1 -h ~  &>> /tmp/du-report.log 
+
+2) crontab -l
+
+3) sudo ls /var/spool/cron
+
+4) vim /etc/crontab 
+   0 */2 * 1-6 1-5  root  df -h &>> /tmp/df-report-log 
+
+5 crontab -l
+
+6 at now + 5min
+
+7 at 12:00 03152022
+8 atq
+9 atrm
+10 batch 
+
+
+ 
