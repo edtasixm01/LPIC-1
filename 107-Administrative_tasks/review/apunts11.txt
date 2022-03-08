@@ -1,0 +1,262 @@
+# 107.2 tar
+
+   tar empaquetar ---> backups
+       empaquetar + comprimir
+
+    
+    tar empaquetar fitxers, directoris o conjunts d'ells
+
+      c create
+      x extract
+      t list
+      f file-tar-a-crear.tar
+
+      v verbose
+    
+      z zip
+      j bzip
+   
+
+   Crear:
+     
+    tar cf new.tar    file1 file2 /dir1
+ 
+    per defecte emmagatzeman la ruta relattiva (elimina la / inicial)
+
+    tar czf new.tgz  all-a-empaquetar
+         j  new.tar.bz2
+   
+
+   Desempaquetar
+
+     tar xf new.tar ---> extreu tot amb ruta relativa
+                          dins el directori actual
+
+     tar xf new.tar plantilla-a-extreure
+                   ---> extreu noms el que coincideix amb la plantilla
+
+     tar xzf  new.tgz
+         xjf  new.tar.bz2
+
+# Rutes relatives i absolutes
+
+    /tmp/lpi/LPIC-1
+             manuals
+
+    tar xf file.tar -C /   
+
+   -C /   desempaquetar com si el directori actiu fos / 
+
+
+    Rutes absolutes -P
+       tar cPf file.tar origen...
+           es desen amb la ruta absoluta, per en restaurar
+           ser relatiu o absolut depenent se si no posem (relatiu)
+           o posem la P (absolut)
+
+# Recomanacio
+       tar xf file.tar -C / 
+            utilitzar la C
+
+
+
+# Exercicis
+
+3. tar cf /tmp/paquet.tar  /var/tmp
+   tar cf paquet.tar /var/tmp -C /tmp 
+
+4. tar tf paquet.tar 
+    depen de si s'ha forçat la ruta o no 
+    tal i com est l'exercici 3 s relatiu
+
+5. mkdir /tmp/newdata
+   tar xf paquet.tar -C /tmp/newdata 
+
+6. tar -xvf sampleArchive.tar --wildcards '*.jpg' 
+
+7. tar cPf /tmp/paquet-absolute.tar /tmp/newdata 
+
+8. tar tf /tmp/paquet.tar, son rutas relativas.
+
+9 rm -rf /tmp/newdata/*
+
+10 tar xPf /tmp/paquet-absolute.tar 
+
+
+12 tar czf  paquet.tgz
+13 tar cjf  paquet.tar.bz2
+
+
+# -----------------------------------------------------------
+
+
+107.3  locale 
+       timedatectl
+  
+       timezone
+
+       LANG=ca_ES.UTF-8
+       TZ="Europe/Moscow"
+
+1 locale
+
+2. LANG=en_US.UTF-8 
+   ls /noexist
+
+3. LANG=ru_RU.UTF-8
+   ls /noexist
+
+4. LANG=ca_ES.UTF-8
+
+
+5 timedatectl        
+
+
+6. 
+   enunciat incorrecte: tzselect no estableish res
+
+   TZ='Europe/Andorra'; export TZ 
+
+7.8.9 TZ='America/Los_Angeles' date
+
+10 iconv -f UTF-8 -t ASCII noms.txt > noms.ascii.txt
+
+# --------------------------------------------------
+
+
+hwclock
+   hwclock --set --date "mm/dd/yyyy hh:mm"
+
+date
+
+  date -s "01-15-2022"
+  date    +"%Y-%m-%d"
+  date -d +"3days"
+ 
+
+1. date
+2. date +"%Y-%m-%d %H:%M" 
+3. date -s "06-26-2022" 
+
+7. hwclock
+8. hwclock --set --date "12/25/2022"
+9. hwclock --hctosys
+
+10 timedatectl
+11. 
+12.
+
+# --------------------------------------------------------------
+
+System Loging  .log
+
+   syslog klog ---> rsyslog
+
+   systemd ---> systemd-journald
+
+ /etc/rsyslog.conf
+     facility.priority    file-or-action
+
+  /etc/logrotate
+       time
+       rotate n
+
+  /var/log/.....
+
+Systemd: systemd-journald
+         journalctl
+         systemd-cat ---> per generar missatges
+
+   /etc/systemd/journald.conf
+           storage=auto
+           4G
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+       
+
+
+
+
+
+
