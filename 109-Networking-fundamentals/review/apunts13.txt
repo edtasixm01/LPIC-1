@@ -1,0 +1,155 @@
+# 109.3
+
+
+
+  ordres examinar ports:
+     netstat
+     ss
+
+     -t tcp  -u udp  -x sockets IPC (comunicaci entre processos)
+     -l listen   -n numero
+
+    lsof -i tcp:22
+
+Ordres d'interficies 
+
+     capa 2:  ip link show
+              ip link set <if> up/down
+              ifup / ifdown
+              ifconfig
+
+      capa 2
+              ip neigh show
+              arp
+
+      capa 3: ip address show
+              ip addres add ip/mask dev ifcfg
+                        del 
+   
+
+              ip route add a.b.c.d/mask dev ifcfg
+                       del
+
+              ip route add default via IP-del-gateway
+                       del         
+ 
+             ping ping6   ICMP
+                  -c count -t ttl
+
+             traceroute  ICMP salts
+
+      capa4:
+             ICMP /UDP mida MTU
+
+             tracepath (paquet iputils-tracepath)
+
+ethtool  (paquet ethtool)
+
+netcat (nc ncat)
+
+
+Firewalls:
+    iptables ip6tables firewalld
+    iptables -L
+    iptables -L -t nat
+
+# Exercicis
+
+1- ip link show
+   ip l
+   ifconfig
+
+2. ip link set enp1s0 down 
+   ip link set enp1s0 up
+
+   ifdown ens3
+   ifup ens
+ 
+   ifconfig 
+
+3. ip route show
+   ip r
+
+4. ip address add 192.168.1.143/24 dev enp1s0 
+
+5. ip route add default via 192.168.1.1
+   route add default gw eth0 192.168.1.1 
+
+6. ping learning-lpi.org 
+
+7. traceroute 8.8.8.8 
+
+8. ss -tlnp | grep 80
+   netstat -nltp | grep 80 
+
+9. tracepath 8.8.8.8
+
+
+# --------------------------------------------
+# 109.4 Client DNS
+
+    /etc/hosts ---> resoluci local
+    /etc/resolv.conf --> indica el servidor de noms DNS al que contactar
+    /etc/nsswitch que termina que es consulta primer.
+
+
+Conceptes de servidor DNS
+    un registre de recurs  RR 
+    A host, MX correu, NS servidor de noms SOA Start of authority
+
+    FQDN   pc12.edt.org
+                edt.org ---> domini
+           pc12 ---> host
+
+       host pc12 ---> host pc12.edt.org
+            pc12. ---> pc12.
+
+           www.vendes.botiga.cat.
+               <----- domini-->
+             un pc que es diu www
+
+  Ordres client:
+       dig
+       host
+
+       nslookup (deprecated)
+
+
+       dig
+       host
+
+       nslookup (deprecated)
+
+1. /etc/nsswitch
+2 /etc/hosts
+3. /etc/resolv.conf
+4 dig -t NS pue.es
+      -A
+      -t MX A NS SOA
+5. dig -A lms.pue.es
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+ 
+         
+
+
+
+
+
+
+

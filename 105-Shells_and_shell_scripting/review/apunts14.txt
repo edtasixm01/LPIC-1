@@ -1,0 +1,229 @@
+# 105. scripting
+#------------------------------------------
+
+
+Variables
+    nom=value
+    $nom --> indica el $ accedir al contingut de la variable
+
+Prompt
+   PS1 \u \h \w \W \$
+
+Alias
+   redefinir ordres
+   conjunts d'ordres
+   alias nom='ordres'
+   unalias nom
+
+Compound command
+
+    ordre ; ordre; ordre ;
+    ordre &   ---> background
+    ordre1 && ordre2 ---> executa ordre2 noms si ordre1 ok 
+    ordre2 || ordre2 ---> executa ordre2 noms si ordre1 falla
+
+# Exercicis
+
+1. name="eduard"
+    echo $name
+2 edat=50
+   echo $edat
+
+3 bash
+  echo $name $edat
+  
+  exit
+
+4 export name edat
+     atenci: no posar export $nom $edat --> el $ aqu s incorrecte
+             perqu NO accedim al contingut de la variable
+
+5 bash
+  echo $name $age
+
+6.  alias uname='uname -a' 
+    uname 
+
+7. alias cal2022='cal 2022' 
+   
+   alias cal='cal 2022'
+
+8. alias today='date ; cal ; uname' 
+
+9. unalias cal today uname
+
+
+# --------------------------------------------------
+
+Les definicials d'alias variables, funcions....
+PERMANENTS
+
+Uusuari inicia/tanca sessio / shell
+
+    - login shell: login usuari + password i inicia una sessi en un shell
+    -  iniciar interactivament un shell: bash
+
+     Globals (system wide)
+          Les definicions aqui dins afecten tot el sistema
+          root
+
+         /etc/profile
+                  - variables
+                  - startup programs  
+         /etc/bashrc
+                  - aliases 
+                  - functions
+
+     Personal per usuari
+           En el directori home de l'usuari
+           els edita/ defineix l'usuari
+
+         ~/.profile   /.bash_profile
+                  - variables
+                  - sartup programs
+         ~/.bashrc
+                  - aliases
+                  - functions
+
+# ----------------------------------------------------
+
+Ordres:
+       $ ordre <enter>
+
+       1) que el shell l'analitza i expandeix el que calgui
+       2) l'executa 
+
+    quina s ms prioritaria:
+
+       - 1) alias / funcions
+       - 2) built-in command
+                 help  man builtins
+                 jobs cd 
+       - 3) externes
+               existeix un fitxer executable binari (en general)
+               /bin /usr/bin .....  directoris bin
+  
+ Executar una ordre:
+       - ruta absoluta   $ /usr/bin/date
+       - ordre           $ date
+
+ 3) Ordres externes: $ ordre
+     busaquen al PATH
+     PATH variable: la llista de camins alternatius amb precedencia
+                    on buscar els fitxers executables de les ordres
+             PATH=dir1:dir2:dir3
+
+        precedncia: el de ms a l'esquerra es mira primer
+      Si l'usuari o administrador posen un directori abans:
+              poden personalitzar les ordre, les seves s'executen
+              abans que les del sistema
+
+     Si es posa al final del PATH no s'executen les que el sistema
+     te en els directoris d'abans.
+
+
+# Exercici
+
+10 Global:
+   variable 
+        class="pue"
+        name="eduard"
+
+
+   alias calendar --> cal
+
+   sudo login pue
+
+11 Local:
+
+   name="anna"
+   alias uname --> uname -a
+
+
+
+# ---------------------------------------------------
+
+Programes:
+     compilats
+     interpretats
+
+     bash --> interpretat
+     python ---> interpretat
+
+Scripts:
+    #! interpret --> /bin/bash
+                 --> /usr/bin/python
+   Shebang
+
+   ordres ajuntades en un fitxer
+   odres que es poden fer en el shell en mode comanda
+
+ Exeutar:
+
+     bash nom.sh ---> s'executa un subshell
+     source nom.sh ---> excutar l'script en el shell actual
+       .    nom.sh ---> el punt amb espai s un sinonim de l'ordre source
+
+     chmod +x nom.sh
+         ara nom.sh te les x --> rwxr-xr-x 
+ 
+       /ruta/absiluta/al/nom.sh
+       ./nom.sh   ---> ruta relativa quan som al directori del script
+
+       copiar l'script a un directori del PATH (+x)
+
+  
+Command substitution:
+   ordre arg1 arg1 arg2
+         $(ordre)  -----> executar l'ordre
+   $(ordre)
+   `ordre`  
+  
+   ordre arg1 $(ordre) arg1
+   variable=$(ordre)
+
+Arithmetic expansion $((3*4))
+Tilde expansion ~login
+Brace expansion {papa,mama} {01..20}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
