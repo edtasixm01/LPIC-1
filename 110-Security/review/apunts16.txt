@@ -1,0 +1,80 @@
+# 110 Seguretat
+
+
+# 110.1 Sudo
+
+   su switch user
+        ----> convertir-nos en un altre usuari
+              su - pere
+        --->  su -  
+              ens convertim en root
+        su -
+        su -l
+        no recomano noms fer su --> no incorpora l'entorn
+
+   sudo
+       poder fer accions en nom d'un altre usuari, per defecte root
+
+         sudo useradd pere ---> sere root per fer useradd
+         sudo -u anna ls ~ ---> sere anna i llistare el home de anna
+
+       Molts sistemes Live / VM per no tenir acces al compte de root
+
+       - l'usuari sempre es un usuari no priveligat
+       - nomes ets superusuari el temps de fer l'ordre
+       - permet ser root sense saber el passwd de root
+         o perqu root delega funcions als usuaris
+       - es fa un log de les accions 
+ 
+       visudo  ---> ordre per editar el fit de conf
+       /etc/sudoers
+       sudo ordres a fer
+
+Fitxer de configuraci: /etc/sudoers
+   Alias de host  llista de noms o ips mask 
+   Alias d'usuari (noms, i amb uids)
+   Alias de ordres ordres  
+
+   Regles (ACL)
+
+ualment existeix un grup:
+      sudo en debian
+      wheel en RH
+
+      per defecte el sudoers ja deixa fer de tot als membres d'aquest grup
+
+    Regla:     
+      usuari host = (as user user:group)  command
+                      si no diem res s root 
+      pere  ALL=ALL
+       pere ALL=/usr/bin/systemctl *
+       pere ALL=/sbin/usermod, /sbin/useradd
+       pere ALL=(marta) ordre
+
+    Opcions:
+        ! negar
+        PASSWD   ---> si ha de demanar el passwd a l'usuari
+        NOPASSWD ---> no cal que el demani
+        passwd-de-root 
+        *   per indicar qualsevol part de l'ordre
+              /sbin/sys*
+              /sbin/systectl *
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+

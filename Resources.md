@@ -17,13 +17,11 @@
 
 ### VM Virtual Machines
 
- * [PUE x64 Centos + Debian. Dual boot CentOS 7 and Debian 9 x64 64 bits 5.2GiB centian_x64.ova](https://u.pcloud.link/publink/show?code=XZ0DKtkZax09QKYCk3hG3G6MuFQyhzbeECSk) [**recomended**]
-
- * [PUE i386 Centos + Debian. Dual boot CentOS 7 and Debian 10 i386 32 bits 5.1GiB centian_i386.ova](https://u.pcloud.link/publink/show?code=XZcRI2kZmrD0lK2zjE7A3sY5xbdEVJKYWIty)
+ * [PUE i386 Centos + Debian. Dual boot CentOS 7 and Debian 10 i386 32 bits 5.1GiB centian_i386.ova](https://u.pcloud.link/publink/show?code=XZcRI2kZmrD0lK2zjE7A3sY5xbdEVJKYWIty) [**recomended**]
 
  * [CentOS minimal (netinstall). CentOs 7 x86_64 64 bits 2009 973MiB](https://u.pcloud.link/publink/show?code=XZ952BXZWRF0MNlrvD7IzVqiRd0ejmrp5rvV)
 
- * Usuaris/password de las màquines: linux / linux, root / toor
+   * Usuaris/password de las màquines anteriors: linux / linux, root / toor
 
  * [PUE LAB https://labs.pue.es](https://labs.pue.es)
 
@@ -41,16 +39,16 @@
 ### Get Fedora
 
  * [Get fedora](https://getfedora.org/)
- * [All Fedora GNU/Linux Releases](https://dl.fedoraproject.org/pub/fedora/linux/releases/)
- * [Fedora Cloud](https://dl.fedoraproject.org/pub/fedora/linux/releases/32/Cloud/x86_64/images/)
+ * [All Fedora GNU/Linux Releases](https://archives.fedoraproject.org/pub/archive/fedora/linux/releases/)
+ * [Fedora Cloud](https://archives.fedoraproject.org/pub/archive/fedora/linux/releases/32/Cloud/x86_64/images/)
 
 
 ### Get Debian
 
  * [Get Debian](https://www.debian.org/distrib/)
  * [Debian Cloud Images](https://cloud.debian.org/images/cloud/)
- * [Debian Cloud images 10-Bullseye list](https://cloud.debian.org/images/cloud/bullseye/latest/)
- * [Recomended cloud image / direct root access](https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-nocloud-amd64.qcow2)
+ * [Debian Cloud images 11-Bullseye list](https://cloud.debian.org/images/cloud/bullseye/latest/)
+ * [Recomended cloud image / direct root access](https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-nocloud-amd64.qcow2) [**recomended**]
 
 
 ### Get Ubuntu
@@ -95,7 +93,7 @@ This image has root access passwordless (user: root, no password)
 
 Fedora Cloud 32 Repo: /pub/fedora/linux/releases/32/Cloud/x86_64/images
 
-https://dl.fedoraproject.org/pub/fedora/linux/releases/32/Cloud/x86_64/images 
+https://archives.fedoraproject.org/pub/archive/fedora/linux/releases/32/Cloud/x86_64/images/
 
 Image: Fedora-Cloud-Base-32-1.6.x86_64.qcow2
 

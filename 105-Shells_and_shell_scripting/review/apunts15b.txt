@@ -1,0 +1,224 @@
+# 105.2 Scripting
+
+
+Operador test: fer condicions
+
+   test $num -eq 10
+   [ $num -eq 10 ]
+             -------> espais a voltant dels brackets
+
+   $? <--- variable que conte codi de retron, errorlevel,
+           0  indica OK
+         <>0 indica error 
+
+   arg1 OP arg2   Arithmetic tests.  OP is one of
+     -eq   =, -ne != , -lt <, -le <=, -gt > , -ge >e
+
+   strings:
+        =
+       !=
+       >
+       <
+       -n not-null (si te xixa)
+       -z zero (si s cadena buida "")
+                
+
+logics
+    ! no
+    ! [ ..... ] nega tota l'expessi
+    [ ! $num -gt 10 -a $num -lt 20 ]
+          ---------------------------> nega noms la primera codicio
+
+    -a and
+    -o or
+              ( ! cond1 -a cond2 -o cond 3)
+                 ! cond1
+                        -a 
+                                 -o 
+        Predecncia: ! -a -o  (not and or)
+
+
+Exercicis:
+
+3 Command substitution
+
+ a-> hostname=$(hostname)
+ b-> date=$(date +"%d-%m-%Y") 
+ c-> five=$( cut -d: -f1 /etc/passwd | sort  | head -n5) 
+ d-> shells=$(cut -d: -f7 /etc/passwd | sort -u)
+
+
+4 Test
+
+ a) [ ! -e /etc/fstab ]
+    ! [ -e /etc/fstab ]
+
+ b) [ ! -f /dev/tty1
+
+ c) [ ! $num -eq 10 ]
+    [  $num -ne 10 ]
+
+ d) [ $num -le 100 ]
+
+ e) [ $name != "pere" -a $name != "anna" -a $name != "marta" ]; echo $?
+
+ f) [ $num -eq 10 -o $num -eq 15 -o $num -eq 20 ]
+
+ 
+Condicional:
+
+ if / elif /else
+
+ if condicio -----> mentida!
+ then
+    accions
+    accions
+ elif condicio
+ then
+     accions
+     accions
+ else
+     accions
+     accions
+ fi
+
+  condicio ---> nostra visio logica
+                qualsevol ordre del sistema operatiu
+                 ordre
+                     0 si ha anat be
+                    <>0 si no ha anat be
+
+              test [ condicio ]
+
+
+Proposta
+
+    mkdir ... $1
+    $?
+      si creat
+      no creat
+
+
+Bucles --------------------------------
+
+while condicio
+do
+  accions
+  accions
+done
+
+
+for var in valor1 valor2 valor3 
+do
+  accions
+  accions
+done
+
+Arguments / Positional Parameter
+
+  $$ PID
+  $0 programa
+  $*   llista
+  $@    llista que fa split
+  $# numero d'arguments
+  $1 ... posicio
+
+Funcions
+   function name(){
+       acction
+        return num --> codi d'error de retorn
+   } 
+    
+   exit --> plega del programa
+    return --> sortir de la funcio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Condicional: case
+    case equivalent switch de C 
+       valor: constant o una expressio regular
+
+
+    case var in 
+      valor)
+        acccions
+        accions;;
+      valor1)
+        acccions;;
+     *)
+        acccions
+    esac
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
