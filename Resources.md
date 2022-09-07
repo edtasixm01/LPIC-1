@@ -88,6 +88,8 @@ Image: debian-11-nocloud-amd64.qcow2 (297M) [**recomended**]
 
 This image has root access passwordless (user: root, no password)
 
+Si cal reconfigurar el teclat es pot usar *apt-get install console data* i seleccionar spanish del file list, configuració standard. Si cal reconfigurar-lo altre cop es fa amb *dpkg-reconfigure console-data*
+
 
 ### Fedora Cloud Images
 
