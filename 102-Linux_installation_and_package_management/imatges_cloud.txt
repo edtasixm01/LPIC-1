@@ -1,0 +1,31 @@
+*******
+Via ISO
+*******
+
+Debian 11 nocloud
+-----------------
+https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-nocloud-amd64.qcow2 
+
+Debian 11 netinst
+------------------   
+https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.2.0-amd64-netinst.iso 
+
+Fedora 32 workstation
+---------------------- 
+https://archives.fedoraproject.org/pub/archive/fedora/linux/releases/30/Workstation/x86_64/iso/Fedora-Workstation-netinst-x86_64-30-1.2.iso 
+
+*********
+Via HTTP
+*********
+
+Fedora32 
+---------
+https://archives.fedoraproject.org/pub/archive/fedora/linux/releases/32/Everything/x86_64/os/    
+
+Debian11 
+--------
+https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ 
+
+Ubuntu 20 
+http://archive.ubuntu.com/ubuntu/dists/focal/main/installer-amd64 
+
